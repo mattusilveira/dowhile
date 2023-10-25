@@ -7,10 +7,19 @@
 
     //Entrada
 
+    let nota = -1;
 
     //Processamento
 
+    while (nota < 0 || nota > 10 || isNaN(nota)) {
+        nota = Number(prompt("Insira um número entre zero e dez(0 e 10):").trim());
+        if (nota < 0 || nota > 10) {
+            alert("Resposta Inválida!");
+        }
+    }
+    alert(`O número inserido foi ${nota}!`);
 
     //Saída
+
 
 </script>
