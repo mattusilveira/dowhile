@@ -11,11 +11,27 @@
     */
 
     //Entrada
+    let nome = prompt('insira um nome').toLowerCase().trim()
+    let idd = parseInt(prompt('insira uma idade'))
+    let Salário = Number(prompt('insira um salario').replace('.', ','))
+    let ctdr = 0
+    let sexo = prompt('insira seu sexo F-feminino M-masculino').toLowerCase().trim()
+    let ec = prompt('informe S-soltero C-casado V-viuvo D-divorciado').toLowerCase().trim()
 
 
     //Processamento
 
+    while (nome.length <= 3 && idd < 0 || idd > 150 && Salário < 0 && sexo !== 'm' || sexo !== 'f' && ec !== 's' && ec !== 'c' && ec !== 'v' && ec !== 'd') {
+        alert('valor invalido');
+        nome = prompt('insira um nome');
+        idd = Number(prompt('insira uma idade entre 0 e 150'));
+        Salário = Number(prompt('insira um salario maior que 0'));
+        sexo = prompt('insira seu sexo F-feminino M-masculino');
+        ec = prompt('informe S-soltero C-casado V-viuvo D-divorciado');
+        ctdr++
+    }
+
 
     //Saída
-
+    alert(` nome: ${nome} \nIdade: ${idd} \nsalário ${Salário} \nsexo: ${sexo} \nEstado Civil: ${ec}`)
 </script>
