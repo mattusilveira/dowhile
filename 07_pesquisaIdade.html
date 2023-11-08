@@ -13,11 +13,70 @@
     */
 
     //Entrada
+    const qtd = parseInt(prompt(`informe a quantidade de pessoas que foram feitas as pesquisas`))
+    let contador = 0
+    let mulher = 0
+    let homem = 0
+    let idadeF = []
+    let salarioM = []
+    let salarioF = []
+    let médiaF = 0
+    let médiaM = 0
+    let idadeM = []
 
 
     //Processamento
 
+    while (contador < qtd) {
+        let sexo = prompt(`informe o sexo do entrevistado: F-feminino M-masculino`).toLowerCase().trim()
+        let idade = parseInt(prompt('informe a idade do seguinte entrevistado'))
+        let salário = Number(prompt('informe o salario do entrevistado'))
+        contador++
+
+
+        if (idade < 0) {
+            break;
+        }
+
+        if (sexo == 'f') {
+            mulher++
+            idadeF.push(idade)
+            salarioF.push(salário)
+            médiaF += salário
+
+        }
+        else if (sexo == 'm') {
+            idadeM.push(idade)
+            salarioM.push(salário)
+            médiaM += salário
+            homem++
+        }
+        else {
+            alert('insira certo')
+            contador--
+        }
+
+    }
+
+    let salarioMC = salarioM
+    let salarioFC = salarioF
+
+    médiaF = médiaF / mulher
+    médiaM = médiaM / homem
+    salarioFC.sort((a, b) => a - b)
+    salarioMC.sort((a, b) => a - b)
+    const posicaomenorM = salarioM.indexOf(salarioMC[0])
+    const posicaomenorF = salarioF.indexOf(salarioFC[0])
+    let idadeFmenorsalario = idadeF[posicaomenorF]
+    let idadeMmenorsalario = idadeM[posicaomenorM]
+
+
+    if (salarioF[0] < salarioM[0])
+        alert(`a média do salário feminina: R$ ${médiaF} \na média do salário masculino é: R$ ${médiaM} \na menor idade feminina é ${idadeF[0]} \na maior idade feminina é ${idadeF[idadeF.length - 1]} \na menor idade masculina é: ${idadeM[0]} \na maior idade masculina é: ${idadeM[idadeM.length - 1]} \na quantidade de mulheres na região é ${mulher} \no menor salário é feminino que é  R$ ${salarioF[0]} e idade da pessoa é ${idadeFmenorsalario} `)
+    else {
+        alert(`a média do salário feminina: R$ ${médiaF} \na média do salário masculino é: R$ ${médiaM} \na menor idade feminina é ${idadeF[0]} \na maior idade feminina é ${idadeF[idadeF.length - 1]} \na menor idade masculina é: ${idadeM[0]} \na maior idade masculina é: ${idadeM[idadeM.length - 1]} \na quantidade de mulheres na região é ${mulher} \no menor salário é masculino que é  R$ ${salarioM[0]} e idade da pessoa é ${idadeMmenorsalario} anos`)
+    }
 
     //Saída
-
+    
 </script>

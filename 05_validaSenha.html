@@ -6,8 +6,17 @@
     */
 
     //Entrada
+    let senha = parseInt(prompt('informe uma senha 4 com numeros (não pode conter letras na senha)'))
+    let verificador = parseInt(prompt(`informe novamente`))
+    let contador = 0
 
-    
+    while (senha.toString().length !== 4 || verificador !== senha) {
+        alert(`senha incorreta`)
+        senha = parseInt(prompt('informe uma senha com 4 numero (não pode conter letras na senha)'))
+        verificador = parseInt(prompt(`informe novamente`))
+        contador++
+    }
+    alert(`senha correta`)
 
     //Processamento
 

@@ -20,7 +20,53 @@
     */
 
     //Entrada
+    
+    let J = 0
+    let M = 0
+    let N = 0
+    let B = 0
+    let contador = 0
+    let voto = 0
 
+
+    while (true) {
+
+        const votos = parseInt(prompt(`em quem voce votara: 0-mostrar resultado 1-Joãozinho 2-Mariazinha 3-Nulo 4-Branco `))
+        contador++
+
+        if (votos === 1) {
+            J++
+            voto++
+        }
+        else if (votos === 2) {
+            M++
+            voto++
+        }
+        else if (votos === 3) {
+            N++
+            voto++
+        }
+        else if (votos === 4) {
+            B++
+            voto++
+        }
+        else if (votos === 0) {
+            break;
+        }
+        else {
+            alert(`INFORME O VALOR CERTO`)
+        }
+    }
+
+    if (J > M) {
+        alert(`o candidato vencedor foi: Joãozinho com ${J} votos \nMariazinha recebeu ${M} votos \nos votos nulos deram: ${((N / voto) * 100).toFixed(0)}% \ne os votos em branco deram: ${((B / voto) * 100).toFixed(0)}%`)
+    }
+    else if (M > J) {
+        alert(`o candidato vencedor foi: Mariazinha com ${M} votos \nJoãozinho recebeu ${J} votos \nos votos nulos deram: ${((N / voto) * 100).toFixed(0)}% \ne os votos em branco deram: ${((B / voto) * 100).toFixed(0)}%`)
+    }
+    else {
+        alert(`houve um empate!!!!  \nMariazinha recebeu ${M} votos \nJoãozinho recebeu ${J} votos \nos votos nulos deram: ${((N / voto) * 100).toFixed(0)}% \ne os votos em branco deram: ${((B / voto) * 100).toFixed(0)}%`)
+    }
 
     //Processamento
 
@@ -28,5 +74,3 @@
     //Saída
 
 </script>
-
-
